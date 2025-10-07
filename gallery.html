@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Gunung Prau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table class="layout" cellspacing="0" cellpadding="0">
+    <tr>
+        <td colspan="2" class="header">
+            <h1>GUNUNG PRAU</h1>
+            <p>Galeri Keindahan Alam Dieng dari Puncak Prau</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="sidebar" valign="top">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </td>
+
+        <td class="content" valign="top">
+            <h2>Galeri Gunung Prau</h2>
+            <p>Klik gambar untuk melihat informasi menarik tentang Gunung Prau.</p>
+
+            <table class="gallery-table" cellpadding="10" cellspacing="10">
+                <tr align="center">
+                    <td>
+                        <img src="foto prau.jpeg" class="gallery-img" alt="Sunrise Prau" onclick="showPopup('sunrise')">
+                        <h3>Sunrise Prau</h3>
+                    </td>
+                    <td>
+                        <img src="download.jpeg" class="gallery-img" alt="Camping" onclick="showPopup('camp')">
+                        <h3>Camping Seru</h3>
+                    </td>
+                    <td>
+                        <img src="OIP.jpeg" class="gallery-img" alt="Padang Bunga" onclick="showPopup('flowers')">
+                        <h3>Padang Bunga</h3>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="footer">
+            RAFLI ILHAM (231011400756) | 2025 Wisata Gunung Prau | <a href="contact.html">Hubungi Kami</a>
+        </td>
+    </tr>
+</table>
+
+<!-- POPUP DETAIL -->
+<div id="popup" class="popup">
+    <div class="popup-content" id="popup-content">
+        <img id="popup-img" src="" alt="Gambar Gunung Prau">
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+        <button class="close-btn" onclick="closePopup()">Tutup</button>
+    </div>
+</div>
+
+<script>
+function showPopup(place) {
+    const popup = document.getElementById("popup");
+    const img = document.getElementById("popup-img");
+    const title = document.getElementById("popup-title");
+    const text = document.getElementById("popup-text");
+
+    if (place === "sunrise") {
+        img.src = "foto prau.jpeg";
+        title.textContent = "Sunrise Gunung Prau";
+        text.textContent = "Pemandangan matahari terbit di Prau dikenal sebagai salah satu sunrise terbaik di Indonesia.";
+    } else if (place === "camp") {
+        img.src = "download.jpeg";
+        title.textContent = "Camping di Gunung Prau";
+        text.textContent = "Nikmati pengalaman camping seru dengan pemandangan awan dan bintang di malam hari.";
+    } else if (place === "flowers") {
+        img.src = "OIP.jpeg";
+        title.textContent = "Padang Bunga Daisy";
+        text.textContent = "Hamparan padang bunga daisy menambah keindahan alami jalur pendakian Prau.";
+    }
+    popup.style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+</body>
+</html>
